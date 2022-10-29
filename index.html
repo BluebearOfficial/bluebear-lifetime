@@ -64,11 +64,12 @@
             //console.log(diff);
             if (diff > 0) {
                 let age = parseInt(diff / 31557600);
+                let days = parseInt(diff / 86400).toFixed(4);
                 let month = parseInt(diff / 2629800)- 12 * age;
                 let day = (diff / 86400 - 365.25 * age - 30.4375 * month).toFixed(4);
                 let hours = (diff / 36000000).toFixed(8);
                 let seconds = parseInt(diff);
-                let cd = age + ' 岁 ' + month + ' 个月 ' + day + ' 天 ' + ' 或者 ' + seconds + ' 秒 ' + ' 或 ' + hours + ' 万小时 ' ;
+                let cd = age + ' 岁 ' + month + ' 个月 ' + day + ' 天 ' + ' 或 ' + seconds + ' 秒 ' + ' 或 ' + days + ' 天 '+ ' 或 ' + hours + ' 万小时 ' ;
                 document.getElementById('cd').innerHTML = cd;
           
                 
