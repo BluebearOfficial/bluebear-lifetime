@@ -24,12 +24,20 @@
             line-height: 2em;
         }
 
+        .countup {
+            line-height: 1.5;
+            font-size: 40px;
+            background-color: white;
+            padding: 15px;
+        }
+
         .countdown {
             line-height: 1.5;
             font-size: 40px;
             background-color: white;
             padding: 15px;
         }
+
     </style>
 </head>
 
@@ -38,13 +46,13 @@
         <div class="box2">
             <br>
             <h1>blue bear life length</h1>
-            <h2>蓝熊活了多久？</h2>
+            <h2>蓝熊活了多久？离いちご还差多久？</h2>
             <b>————————————————————————</b>
             <h3>蓝熊已经活了</h3>
-            <b class="countdown" id="cd">正在计算…(请确保启用JS)</b><br><br>
+            <b class="countup" id="cd">正在计算…(请确保启用JS)</b><br><br>
             <b>————————————————————————</b>
-            <h4>蓝熊已经活了</h4>
-            <b class="countdown" id="cd">正在计算…(请确保启用JS)</b><br><br>
+            <h4>离いちご还差</h4>
+            <b class="countdown" id="cds">正在计算…(请确保启用JS)</b><br><br>
             <b>————————————————————————</b>
             <h1>关于</h1>
             <b>
@@ -55,6 +63,10 @@
                 
                 Q：为什么本页面用了“万小时”这个单位？<br>
                 A：有句话“65万个小时后,当我们氧化成风,就能变成同一杯啤酒上两朵相邻的泡沫,就能变成同一盏路灯下两粒依偎的尘埃。 宇宙中的原子并不会湮灭,而我们,也终究会在一起。”
+                <br>
+
+                Q：いちご是什么意思？<br>
+                A：“我老想当老师了。最近被swd折磨的吃什么吐什么，然后特别特别想当老师。。。可惜内卷太激烈了。——蓝熊”
                 <br>
             </b>
 
@@ -80,6 +92,27 @@
                 
             }
         }, 1000);
+
+        let starts = 1794104700000;
+        setInterval(() => {
+            let a = new Date();
+            let diff = parseInt((starts - a.getTime()) / 1000);
+            //console.log(diff);
+            if (diff > 0) {
+                let age = parseInt(diff / 31557600);
+                let days = (diff / 86400).toFixed(4);
+                let month = parseInt(diff / 2629800)- 12 * age;
+                let day = (diff / 86400 - 365.25 * age - 30.4375 * month).toFixed(4);
+                let hours = (diff / 36000000).toFixed(8);
+                let seconds = parseInt(diff);
+                let cd = age + ' 年 ' + month + ' 个月 ' + day + ' 天 ' + ' 或 ' + seconds + ' 秒 ' + ' 或 ' + days + ' 天 '+ ' 或 ' + hours + ' 万小时 ' ;
+                document.getElementById('cds').innerHTML = cd;
+          
+                
+            }
+        }, 1000);
+
+
     </script>
 </body>
 
