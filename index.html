@@ -93,10 +93,10 @@
             }
         }, 1000);
 
-        let starts = 1794104700000;
+        let end = 1794104700000;
         setInterval(() => {
             let a = new Date();
-            let diff = parseInt((starts - a.getTime()) / 1000);
+            let diff = parseInt((end - a.getTime()) / 1000);
             //console.log(diff);
             if (diff > 0) {
                 let age = parseInt(diff / 31557600);
