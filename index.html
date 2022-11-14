@@ -46,13 +46,15 @@
         <div class="box2">
             <br>
             <h1>blue bear life length and the ichigo</h1>
-            <h2>蓝熊活了多久？离いちご还差多久？</h2>
             <b>————————————————————————</b>
             <h3>蓝熊已经活了</h3>
             <b class="countup" id="cd">正在计算…(请确保启用JS)</b><br><br>
             <b>————————————————————————</b>
             <h4>离いちご还差</h4>
             <b class="countdown" id="cds">正在计算…(请确保启用JS)</b><br><br>
+            <b>————————————————————————</b>
+            <h4>嘉鸿离开蓝熊已经</h4>
+            <b class="countdown" id="jh">正在计算…(请确保启用JS)</b><br><br>
             <b>————————————————————————</b>
             <h1>关于</h1>
             <b>
@@ -107,6 +109,26 @@
                 let seconds = parseInt(diff);
                 let cd = age + ' 年 ' + month + ' 个月 ' + day + ' 天 ' + ' 或 ' + seconds + ' 秒 ' + ' 或 ' + days + ' 天 '+ ' 或 ' + hours + ' 万小时 ' ;
                 document.getElementById('cds').innerHTML = cd;
+          
+                
+            }
+        }, 1000);
+
+        let jhgone = 1667817960000;
+        setInterval(() => {
+            let a = new Date();
+            let diff = parseInt((a.getTime() - jhgone) / 1000);
+            //console.log(diff);
+            if (diff > 0) {
+                let age = parseInt(diff / 31557600);
+                let years = (diff / 31557600).toFixed(8);
+                let days = (diff / 86400).toFixed(4);
+                let month = parseInt(diff / 2629800)- 12 * age;
+                let day = (diff / 86400 - 365.25 * age - 30.4375 * month).toFixed(4);
+                let hours = (diff / 36000000).toFixed(8);
+                let seconds = parseInt(diff);
+                let cd = age + ' 年 ' + month + ' 个月 ' + day + ' 天 ' + ' 或 ' + seconds + ' 秒 ' + ' 或 ' + years + ' 年 '+ ' 或 ' + hours + ' 万小时 ' ;
+                document.getElementById('jh').innerHTML = cd;
           
                 
             }
