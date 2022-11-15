@@ -126,9 +126,9 @@
                 let days = (diff / 86400).toFixed(4);
                 let month = parseInt(diff / 2629800)- 12 * age;
                 let day = (diff / 86400 - 365.25 * age - 30.4375 * month).toFixed(4);
-                let hours = (diff / 36000000).toFixed(8);
+                let hours = (diff / 3600).toFixed(4);
                 let seconds = parseInt(diff);
-                let cd = age + ' 年 ' + month + ' 个月 ' + day + ' 天 ' + ' 或 ' + seconds + ' 秒 ' + ' 或 ' + years + ' 年 '+ ' 或 ' + hours + ' 万小时 ' ;
+                let cd = age + ' 年 ' + month + ' 个月 ' + day + ' 天 ' + ' 或 ' + seconds + ' 秒 ' + ' 或 ' + years + ' 年 '+ ' 或 ' + hours + ' 小时 ' ;
                 document.getElementById('jh').innerHTML = cd;
           
                 
