@@ -50,7 +50,10 @@
             <h3>蓝熊已经活了</h3>
             <b class="countup" id="cd">正在计算…(请确保启用JS)</b><br><br>
             <b>————————————————————————</b>
-            <h4>离いちご还差</h4>
+            <h4>蓝熊使用网名“蓝熊”已经</h4>
+            <b class="countup" id="bear">正在计算…(请确保启用JS)</b><br><br>      
+            <b>————————————————————————</b>
+            <h4>蓝熊离いちご还差</h4>
             <b class="countdown" id="cds">正在计算…(请确保启用JS)</b><br><br>
             <b>————————————————————————</b>
             <h4>嘉鸿离开蓝熊已经</h4>
@@ -131,6 +134,28 @@
                 let seconds = parseInt(diff);
                 let cd = age + ' 年 ' + month + ' 个月 ' + day + ' 天 ' + ' 或 ' + seconds + ' 秒 ' + ' 或 ' + years + ' 年 '+ ' 或 ' + hours + ' 小时 ' ;
                 document.getElementById('jh').innerHTML = cd;
+          
+                
+            }
+        }, 1000);
+
+
+
+        let bear = 1643717100000;
+        setInterval(() => {
+            let a = new Date();
+            let diff = parseInt((a.getTime() - bear) / 1000);
+            //console.log(diff);
+            if (diff > 0) {
+                let age = parseInt(diff / 31557600);
+                let years = (diff / 31557600).toFixed(8);
+                let days = (diff / 86400).toFixed(4);
+                let month = parseInt(diff / 2629800)- 12 * age;
+                let day = (diff / 86400 - 365.25 * age - 30.4375 * month).toFixed(4);
+                let hours = (diff / 3600).toFixed(4);
+                let seconds = parseInt(diff);
+                let cd = age + ' 年 ' + month + ' 个月 ' + day + ' 天 ' + ' 或 ' + seconds + ' 秒 ' + ' 或 ' + years + ' 年 '+ ' 或 ' + hours + ' 小时 ' ;
+                document.getElementById('bear').innerHTML = cd;
           
                 
             }
